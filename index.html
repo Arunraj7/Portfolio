@@ -50,7 +50,10 @@
             return false;
         }
     };
+
+    
 </script>
+
 <!--[if IE 8]>
 <html class="no-js oldie ie8" lang="en">
    <![endif]-->
@@ -58,7 +61,7 @@
    <html class="no-js oldie ie9" lang="en">
       <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
+<html  lang="en">
     <!--<![endif]-->
     <head>
         <!--- basic page needs
@@ -73,6 +76,18 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/vendor.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+      
+  </style>
+    
+        <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
         <!-- script
                ================================================== -->
         <script src="js/modernizr.js"></script>
@@ -207,28 +222,7 @@
                     <img src="images/Skills/HTML.png" alt="" style="width: 55px; height: 70px;" />&nbsp;&nbsp;&nbsp;
                     <img src="images/Skills/css.png" alt="" style="width: 55px; height: 70px;" />
 
-                    <!-- <li>
-                           <div class="progress percent10"><span>90%</span></div>
-                           <strong>HTML5</strong>
-                        </li>
-                        <li>
-                           <div class="progress percent85"><span>85%</span></div>
-                           <strong>CSS3</strong>
-                        </li>
-                        <li>
-                           <div class="progress percent70"><span>70%</span></div>
-                           <strong>JQuey</strong>
-                        </li>
-                        <li>
-                           <div class="progress percent95"><span>95%</span></div>
-                           <strong>PHP</strong>
-                        </li>
-                        <li>
-                           <div class="progress percent75"><span>75%</span></div>
-                           <strong>Wordpress</strong>
-                        </li> -->
-                    <!-- </ul> -->
-                    <!-- /skill-bars -->
+                   
                 </div>
             </div>
             <div class="row button-section">
@@ -262,37 +256,52 @@
                         <div class="bgrid folio-item">
                            
                             <div class="item-wrap">
-                                <img src="images/portfolio/Movie.png" alt="Liberty" />
+                                <img src="images/portfolio/Movie/Cover.png" alt="Liberty" />
                                 <a href="#modal-01" class="overlay">
                                     <div class="folio-item-table">
                                         <div class="folio-item-cell">
-                                            <h3 class="folio-title">Liberty</h3>
+                                            <h3 class="folio-title">Movie Booking App</h3>
                                             <span class="folio-types">
-                                                Graphic Design
+                                                UI Design
                                             </span>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
+                       
                         <div id="modal-01" class="popup-modal slider mfp-hide">
                             <div class="media">
-                                <img src="images/portfolio/Movie.png" alt="" />
+                                <!-- <div> -->
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img src="./images/portfolio/Movie/1.png"></div>
+                                        <div class="swiper-slide"><img src="./images/portfolio/Movie/2.png"></div>
+
+                                            <div class="swiper-slide" ><img src="https://swiperjs.com/demos/images/nature-1.jpg" alt=""></div>
+                                          
+                                        </div>
+                                        <!-- Add Pagination -->
+                                        <div class="swiper-pagination"></div>
+                                        <!-- Add Arrows -->
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                      </div>
+                                
                             </div>
                             <div class="description-box">
-                                <h4>Liberty</h4>
-                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                                <div class="categories">Web Development</div>
+                                <h4>Movie Booking App</h4>
+                                <p>A Simple Movie Booking App UI Design.</p>
+                                <div class="categories">UI Design</div>
                             </div>
                             <div class="link-box">
-                                <a href="http://www.behance.net">Details</a>
+                                <a href="https://www.behance.net/gallery/98193913/Movie-Booking-App-UI">Details</a>
                                 <a href="#" class="popup-modal-dismiss">Close</a>
                             </div>
                         </div>
                         <!-- /modal-01 -->
                         <!-- Modal-01 -->
                         <div class="bgrid folio-item">
-                           
                            <div class="item-wrap">
                                <img src="images/portfolio/Restaurant.png" alt="Liberty" />
                                <a href="#modal-02" class="overlay">
@@ -445,5 +454,21 @@
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+         <!-- Swiper JS -->
+         <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
     </body>
 </html>
