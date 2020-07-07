@@ -215,10 +215,78 @@
         <!-- /process-->
         <!-- resume Section
                ================================================== -->
+        <!-- <style>
+            /* * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            } */
+            /* body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            } */
+            .slider{
+                position: relative;
+                display: flex;
+                width: 600px;
+                height: 300px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0);
+            }
+            .slider img{
+                position: absolute;
+                width: 600px;
+                height: 300px;
+                transition: all .6s;
+            }
+            #img1{
+                opacity: 1;
+            }
+            #img2{
+                opacity: 0;
+            }
+            #img3{
+                opacity: 0;
+            }
+            .fas{
+                cursor: pointer;
+                position: absolute;
+                color: #e7e7e7;
+                z-index: 1;
+                top: 50%;
+                transform: scale(2.6);
+                transition: .4s;
+            }
+            .fas:hover{color: #ffffff;}
+            .fa-chevron-left{left: 30px;}
+            .fa-chevron-right{right: 30px;}
+
+            .circle{
+                position: absolute;
+                bottom: 10px;
+                width: 15px;
+                height: 15px;
+                border: 2.5px solid white;
+                border-radius: 50%;
+                z-index: 1;
+                transition: .4s;
+            }
+            #circle1{
+                left: 46%;
+                background: white;
+            }
+            circle2{left: 50%;}
+            circle2{right: 54%;}
+
+
+        </style>
 
         <!-- /features -->
         <!-- Portfolio Section
-               ================================================== -->
+               ================================================== --> -->
         <section id="portfolio">
             <div class="row section-intro">
                 <div class="col-twelve">
@@ -247,10 +315,23 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- <div class="slider">
+                            <img src="./images/portfolio/Movie/1.png" id="img1">
+                            <img src="./images/portfolio/Movie/2.png" id="img2">
+                            <img src="./images/portfolio/Movie/3.png" id="img3">
+                            <span class="fas fa-chervon-left" onclick="left()"></span>
+                            <span class="fas fa-chervon-right" onclick="right()"></span>
+                            <span class="circle" id="circle1"></span>
+                            <span class="circle" id="circle2"></span>
+                            <span class="circle" id="circle3"></span>
+
+                        </div> -->
 
                         <div id="movie" class="popup-modal slider mfp-hide">
                             <div class="media">
                                 <img src="./images/portfolio/Movie/Cover.png" />
+                            </div>
+                            
                                 <!-- <div> -->
                                 <!-- <div class="swiper-container">
                                     <div class="swiper-wrapper">
@@ -264,8 +345,7 @@
                                     <!-- <div class="swiper-button-next"></div>
                                     <div class="swiper-button-prev"></div> -->
                                 <!-- </div> -->
-                            </div>
-                            <div class="description-box">
+                                <div class="description-box">
                                 <h4>Movie Booking App</h4>
                                 <p>A Simple Movie Booking UI Design</p>
                                 <h4>Tools Used</h4>
@@ -276,8 +356,8 @@
 
                                 <div><br></div>
                                 <div class="categories">UI Design</div>
-                                <!-- <a href="images/portfolio/Planets/1.png" download=""><i class="fa fa-download" style="font-size: 20px;"></i></a> -->
-                            </div>
+                                 <!-- <a href="images/portfolio/Planets/1.png" download=""><i class="fa fa-download" style="font-size: 20px;"></i></a> -->
+                            </div> 
                             <div class="link-box">
                                 <a href="https://bit.ly/2ZmybH1">Details</a>
                                 <a href="#" class="popup-modal-dismiss">Close</a>
@@ -567,6 +647,37 @@
         <script src="js/main.js"></script>
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+        <script>
+            var imgNum = 1;
+            function right(){
+                if(imgNum != 3){
+                    imgNum += 1;
+                    changeImg(imgNum, -1);
+                }
+                else{
+                    imgNum = 1;
+                    changeImg(imgNum, +2);                    
+                }
+            }
+            function left(){
+                if(imgNum != 1){
+                    imgNum -= 1;
+                    changeImg(imgNum,+1);
+                }
+                else{
+                    imgNum = 3;
+                    changeImg(imgNum, -2);
+                }
+            }
+            function changeImg(value, count){
+                document.getElementById(`img${value + count}`).style.opacity ='0';
+                document.getElementById(`img${value}`).style.opacity ='1';
+                document.getElementById(`circle${value + count}`).style.background ='transparent';
+                document.getElementById(`circle${value}`).style.background ='white';
+
+
+            }
+        </script>
 
         <!-- Initialize Swiper -->
         <!-- <script>
